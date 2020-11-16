@@ -1,8 +1,11 @@
 QT       += core gui network multimedia
+#声明需要使用的模块
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+#如果Qt的版本小于4则添加widgets模块(QtCreator自动生成的代码，用于向下兼容)
 
 CONFIG += c++11
+#声明使用C++11标准
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -38,6 +41,8 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+# 安卓编译使用的内容
 
 DISTFILES += \
     android/AndroidManifest.xml \
