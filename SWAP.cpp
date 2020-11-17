@@ -1,4 +1,4 @@
-#include "widget.h"
+﻿#include "widget.h"
 #include "ui_widget.h"
 
 /*---这是用于连接各个信号与槽还有进行一些处理的文件---*/
@@ -125,7 +125,7 @@ void Widget::ReceiveAudioData(char* data,int SpeakerId)
 //    DataFromUdp = data;//存储接收到的内容 TODO:实现回放功能
     emit AudioReceived(data);//通过信号将音频数据传入音频播放线程    
     //遍历用户表
-    //?:这个是不是耗时操作？如果是，应该再别的线程执行还是应该在别的函数执行
+    //?:这个是不是耗时操作？如果是，应该在别的线程执行还是应该在别的函数执行
     for(int i=0;i<UserList.length();i++)
     {
         if(UserList.at(i).Id==SpeakerId)
