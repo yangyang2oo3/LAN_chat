@@ -2,6 +2,7 @@
 
 Audio_input::Audio_input(QObject * parent):QThread(parent)
 {
+    //给与此线程控制权(?)
     moveToThread(this);
 }
 
